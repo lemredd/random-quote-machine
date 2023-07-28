@@ -23,8 +23,8 @@ export default function App() {
   const [quote, set_quote] = React.useState(get_random_quote());
   return (
     <div id="quote-box">
-      <h1 id="text">{quote}</h1>
-      <p id="author">Start editing to see some magic happen :)</p>
+      <h1 id="text">{quote.text}</h1>
+      <p id="author">{quote.author}</p>
       <button id="new-quote">New Quote</button>
     </div>
   );
