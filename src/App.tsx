@@ -43,7 +43,7 @@ export default function App() {
     <div id="quote-box">
       <h1 id="text">{quote.text}</h1>
       <p id="author">{quote.author}</p>
-      <a href="" id="tweet-quote" target="_blank">
+      <a href={tweet_link} id="tweet-quote" target="_blank">
         tweet quote {/* TODO: use twitter/x icon */}
       </a>
       <button id="new-quote" onClick={handle_click}>
