@@ -6,6 +6,10 @@ body {
   place-items: center;
 }
 
+#text {
+  max-width: 400px;
+}
+
 h1,
 p {
   font-family: Lato;
