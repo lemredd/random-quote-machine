@@ -20,7 +20,7 @@ const get_random_quote = () =>
   quotes[Math.floor(Math.random() * (quotes.length - 1))];
 
 export default function App() {
-  const [quote, setQuote] = React.useState('');
+  const [quote, set_quote] = React.useState(get_random_quote());
   return (
     <div id="quote-box">
       <h1 id="text">{quote}</h1>
