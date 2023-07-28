@@ -2,6 +2,7 @@ import * as React from 'react';
 import './style.css';
 
 export default function App() {
+  const [quote, setQuote] = React.useState('');
   return (
     <div id="quote-box">
       <h1 id="text">Hello StackBlitz!</h1>
