@@ -6,6 +6,7 @@ export default function App() {
     <div id="quote-box">
       <h1 id="text">Hello StackBlitz!</h1>
       <p id="author">Start editing to see some magic happen :)</p>
+      <button id="new-quote">New Quote</button>
     </div>
   );
 }
