@@ -21,11 +21,16 @@ const get_random_quote = () =>
 
 export default function App() {
   const [quote, set_quote] = React.useState(get_random_quote());
+
+  const handle_click = () => set_quote(get_random_quote());
+
   return (
     <div id="quote-box">
       <h1 id="text">{quote.text}</h1>
       <p id="author">{quote.author}</p>
-      <button id="new-quote">New Quote</button>
+      <button id="new-quote" onClick={handle_click}>
+        New Quote
+      </button>
     </div>
   );
 }
