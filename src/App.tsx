@@ -35,6 +35,7 @@ export default function App() {
   const [quote, set_quote] = React.useState(get_random_quote());
   const tweet_text_param = `text="${quote.text}" -${quote.author}`;
   const additional_params = 'hashtags=quotes&related=freecodecamp';
+  const tweet_link = `https://twitter.com/intent/tweet?${additional_params}&${tweet_text_param}`;
 
   const handle_click = () => set_quote(get_random_quote());
 
