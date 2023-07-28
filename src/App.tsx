@@ -16,6 +16,9 @@ const quotes = [
   },
 ];
 
+const get_random_quote = () =>
+  quotes[Math.floor(Math.random() * (quotes.length - 1))];
+
 export default function App() {
   const [quote, setQuote] = React.useState('');
   return (
