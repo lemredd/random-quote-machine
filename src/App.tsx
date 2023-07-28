@@ -4,15 +4,15 @@ import './style.css';
 const quotes = [
   {
     author: 'Pablo Picasso',
-    quote: 'Art is the lie that enables us to realize the truth.',
+    text: 'Art is the lie that enables us to realize the truth.',
   },
   {
     author: 'Charlie Gilkey',
-    quote: 'If it matters to you, you’ll find a way.',
+    text: 'If it matters to you, you’ll find a way.',
   },
   {
     author: 'Richard Bach',
-    quote: 'The best way to pay for a lovely moment is to enjoy it.',
+    text: 'The best way to pay for a lovely moment is to enjoy it.',
   },
 ];
 
