@@ -33,6 +33,7 @@ const get_random_quote = () =>
 
 export default function App() {
   const [quote, set_quote] = React.useState(get_random_quote());
+  const tweet_text_param = `text="${quote.text}" -${quote.author}`;
 
   const handle_click = () => set_quote(get_random_quote());
 
@@ -40,6 +41,7 @@ export default function App() {
     <div id="quote-box">
       <h1 id="text">{quote.text}</h1>
       <p id="author">{quote.author}</p>
+      <a href="" id="tweet-quote"></a>
       <button id="new-quote" onClick={handle_click}>
         New Quote
       </button>
