@@ -41,9 +41,13 @@ export default function App() {
 
   return (
     <div id="quote-box">
-      <h1 id="text">{quote.text}</h1>
-      <p id="author">{quote.author}</p>
-      <div className="buttons d-flex justify-content-between align-items-center">
+      <h1 id="text">
+        <strong>"{quote.text}"</strong>
+      </h1>
+      <p id="author" className="mt-3">
+        {quote.author}
+      </p>
+      <div className="buttons mt-5 d-flex justify-content-between align-items-center">
         <a href={tweet_link} id="tweet-quote" target="_blank">
           <i className="fa-brands fa-square-twitter fs-1"></i>
         </a>
