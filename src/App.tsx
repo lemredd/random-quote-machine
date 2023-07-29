@@ -40,7 +40,7 @@ export default function App() {
   const handle_click = () => set_quote(get_random_quote());
 
   return (
-    <div id="quote-box">
+    <div id="quote-box" className="border border-dark-subtle rounded p-5">
       <h1 id="text">
         <strong>"{quote.text}"</strong>
       </h1>
