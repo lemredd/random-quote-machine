@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import QuoteDetails from './components/QuoteDetails';
 import { get_random_quote } from './helpers/quotes';
 
 import './style.css';
@@ -14,12 +15,7 @@ export default function App() {
 
   return (
     <div id="quote-box" className="border border-dark-subtle rounded p-5">
-      <h1 id="text">
-        <strong>"{quote.text}"</strong>
-      </h1>
-      <p id="author" className="mt-3">
-        {quote.author}
-      </p>
+      <QuoteDetails quote={quote} />
       <div className="buttons mt-5 d-flex justify-content-between align-items-center">
         <a href={tweet_link} id="tweet-quote" target="_blank">
           <i className="fa-brands fa-square-twitter fs-1"></i>
