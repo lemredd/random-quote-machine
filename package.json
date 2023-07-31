@@ -3,10 +3,10 @@
 	"version": "0.0.0",
 	"private": true,
 	"dependencies": {
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
 		"@types/react": "18.2.16",
-		"@types/react-dom": "18.2.7"
+		"@types/react-dom": "18.2.7",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -15,18 +15,19 @@
 		"eject": "react-scripts eject"
 	},
 	"devDependencies": {
-		"react-scripts": "latest"
+		"react-scripts": "latest",
+		"typescript": "^5.1.6"
 	},
 	"browserslist": {
 		"production": [
 			">0.2%",
 			"not dead",
 			"not op_mini all"
-	],
-	"development": [
-		"last 1 chrome version",
-		"last 1 firefox version",
-		"last 1 safari version"
-	]
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
