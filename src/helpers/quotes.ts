@@ -11,4 +11,4 @@ export async function fetch_quote(): Promise<Quote> {
 
 	return { ...fetched_quote, "text": fetched_quote.content }
 }
-export let quote: Quote = await fetch_quote()
+export let initial_quote: Quote = await fetch_quote()

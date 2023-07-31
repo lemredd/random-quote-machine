@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import type { Quote } from './types';
 
-import { fetch_quote } from './helpers/quotes';
+import { initial_quote, fetch_quote } from './helpers/quotes';
 
 import TweetBtn from './components/TweetBtn';
 import NewQuoteBtn from './components/NewQuoteBtn';
@@ -11,7 +11,7 @@ import QuoteDetails from './components/QuoteDetails';
 import './style.css';
 
 export default function App() {
-	const [quote, set_quote] = React.useState<Quote>();
+	const [quote, set_quote] = React.useState<Quote>(initial_quote);
 
 	const handle_click = async () => set_quote(await fetch_quote());
 
