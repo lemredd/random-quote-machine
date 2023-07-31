@@ -1,64 +1,27 @@
 import * as React from 'react';
+
+import type { Quote } from './types';
+
+import { get_random_quote } from './helpers/quotes';
+
+import TweetBtn from './components/TweetBtn';
+import NewQuoteBtn from './components/NewQuoteBtn';
+import QuoteDetails from './components/QuoteDetails';
+
 import './style.css';
 
-const quotes = [
-  {
-    author: 'Pablo Picasso',
-    text: 'Art is the lie that enables us to realize the truth.',
-  },
-  {
-    author: 'Charlie Gilkey',
-    text: 'If it matters to you, you’ll find a way.',
-  },
-  {
-    author: 'Richard Bach',
-    text: 'The best way to pay for a lovely moment is to enjoy it.',
-  },
-  {
-    author: 'George Orwell',
-    text: 'In a time of deceit telling the truth is a revolutionary act.',
-  },
-  {
-    author: 'Oscar Wilde',
-    text: 'A work of art is the unique result of a unique temperament.',
-  },
-  {
-    author: 'John Barrymore',
-    text: 'A man is not old until regrets take the place of dreams.',
-  },
-];
-
-const get_random_quote = () =>
-  quotes[Math.floor(Math.random() * (quotes.length - 1))];
-
 export default function App() {
-  const [quote, set_quote] = React.useState(get_random_quote());
-  const tweet_text_param = `text="${quote.text}" -${quote.author}`;
-  const additional_params = 'hashtags=quotes&related=freecodecamp';
-  const tweet_link = `https://twitter.com/intent/tweet?${additional_params}&${tweet_text_param}`;
+	const [quote, set_quote] = React.useState<Quote>(get_random_quote());
 
-  const handle_click = () => set_quote(get_random_quote());
+	const handle_click = () => set_quote(get_random_quote());
 
-  return (
-    <div id="quote-box" className="border border-dark-subtle rounded p-5">
-      <h1 id="text">
-        <strong>"{quote.text}"</strong>
-      </h1>
-      <p id="author" className="mt-3">
-        {quote.author}
-      </p>
-      <div className="buttons mt-5 d-flex justify-content-between align-items-center">
-        <a href={tweet_link} id="tweet-quote" target="_blank">
-          <i className="fa-brands fa-square-twitter fs-1"></i>
-        </a>
-        <button
-          id="new-quote"
-          onClick={handle_click}
-          className="btn btn-outline-primary"
-        >
-          New Quote
-        </button>
-      </div>
-    </div>
-  );
+	return (
+		<div id="quote-box" className="border border-dark-subtle rounded p-5">
+			<QuoteDetails {...quote} />
+			<div className="buttons mt-5 d-flex justify-content-between align-items-center">
+				<TweetBtn {...quote} />
+				<NewQuoteBtn on_click={handle_click} />
+			</div>
+		</div>
+	);
 }
