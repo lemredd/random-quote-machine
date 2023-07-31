@@ -9,6 +9,6 @@ export async function fetch_quote(): Promise<Quote> {
 	const { value } = await reader.read();
 	const [ fetched_quote ] = JSON.parse(new TextDecoder().decode(value))
 
-	return { ...fetched_quote, "text": fetched_quote.content }
+	return { "author": fetched_quote.author, "text": fetched_quote.content }
 }
 export let initial_quote: Quote = await fetch_quote()
