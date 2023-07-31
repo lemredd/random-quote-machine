@@ -34,11 +34,15 @@ const get_random_quote = () =>
 	quotes[Math.floor(Math.random() * (quotes.length - 1))];
 
 export async function fetch_quote(): Promise<Quote> {
-	const { body } = await fetch(GET_API_URL);
-	const reader = body.getReader();
-	const { value } = await reader.read();
-	const [ fetched_quote ] = JSON.parse(new TextDecoder().decode(value))
+	try {
+		const { body } = await fetch(GET_API_URL);
+		const reader = body.getReader();
+		const { value } = await reader.read();
+		const [ fetched_quote ] = JSON.parse(new TextDecoder().decode(value))
 
-	return { "author": fetched_quote.author, "text": fetched_quote.content }
+		return { "author": fetched_quote.author, "text": fetched_quote.content }
+	} catch (error) {
+		return get_random_quote()
+	}
 }
 export const initial_quote = get_random_quote();
