@@ -1,18 +1,14 @@
 import * as React from 'react';
+import type { Quote as Props } from '../types';
 
-interface Props {
-  text: string;
-  author: string;
-}
-
-export default function QuoteDetails(quote: Props) {
+export default function QuoteDetails({ author, text }: Props) {
   return (
     <div>
       <h1 id="text">
-        <strong>"{quote.text}"</strong>
+        <strong>"{text}"</strong>
       </h1>
       <p id="author" className="mt-3">
-        {quote.author}
+        {author}
       </p>
     </div>
   );
