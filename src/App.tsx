@@ -2,8 +2,10 @@ import * as React from 'react';
 
 import type { Quote } from './types';
 
-import QuoteDetails from './components/QuoteDetails';
 import { get_random_quote } from './helpers/quotes';
+
+import NewQuoteBtn from './components/NewQuoteBtn';
+import QuoteDetails from './components/QuoteDetails';
 
 import './style.css';
 
@@ -22,13 +24,7 @@ export default function App() {
 				<a href={tweet_link} id="tweet-quote" target="_blank">
 					<i className="fa-brands fa-square-twitter fs-1"></i>
 				</a>
-				<button
-					id="new-quote"
-					onClick={handle_click}
-					className="btn btn-outline-primary"
-				>
-					New Quote
-				</button>
+				<NewQuoteBtn on_click={handle_click} />
 			</div>
 		</div>
 	);
