@@ -4,6 +4,7 @@ import type { Quote } from './types';
 
 import { get_random_quote } from './helpers/quotes';
 
+import TweetBtn from './components/TweetBtn';
 import NewQuoteBtn from './components/NewQuoteBtn';
 import QuoteDetails from './components/QuoteDetails';
 
@@ -11,9 +12,6 @@ import './style.css';
 
 export default function App() {
 	const [quote, set_quote] = React.useState<Quote>(get_random_quote());
-	const tweet_text_param = `text="${quote.text}" -${quote.author}`;
-	const additional_params = 'hashtags=quotes&related=freecodecamp';
-	const tweet_link = `https://twitter.com/intent/tweet?${additional_params}&${tweet_text_param}`;
 
 	const handle_click = () => set_quote(get_random_quote());
 
@@ -21,9 +19,7 @@ export default function App() {
 		<div id="quote-box" className="border border-dark-subtle rounded p-5">
 			<QuoteDetails {...quote} />
 			<div className="buttons mt-5 d-flex justify-content-between align-items-center">
-				<a href={tweet_link} id="tweet-quote" target="_blank">
-					<i className="fa-brands fa-square-twitter fs-1"></i>
-				</a>
+				<TweetBtn {...quote} />
 				<NewQuoteBtn on_click={handle_click} />
 			</div>
 		</div>
