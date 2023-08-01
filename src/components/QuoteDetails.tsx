@@ -1,9 +1,18 @@
 import * as React from 'react';
-import type { Quote as Props } from '../types';
+import type { Quote } from '../types';
 
-export default function QuoteDetails({ author, text }: Props) {
+interface Props extends Quote {
+	is_fetching_quote: boolean
+}
+
+export default function QuoteDetails({ author, text, is_fetching_quote }: Props) {
+	const quote_details_container = React.useRef<HTMLDivElement>(null)
+	React.useEffect(() => {
+		if (is_fetching_quote) quote_details_container.current.style.opacity = "0"
+		else quote_details_container.current.style.opacity = "1"
+	}, [is_fetching_quote])
 	return (
-		<div>
+		<div ref={quote_details_container} style={{transition: "opacity 300ms ease"}}>
 			<h1 id="text">
 				<strong>"{text}"</strong>
 			</h1>
