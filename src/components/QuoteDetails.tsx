@@ -1,7 +1,11 @@
 import * as React from 'react';
-import type { Quote as Props } from '../types';
+import type { Quote } from '../types';
 
-export default function QuoteDetails({ author, text }: Props) {
+interface Props extends Quote {
+	is_fetching_quote: boolean
+}
+
+export default function QuoteDetails({ author, text, is_fetching_quote }: Props) {
 	return (
 		<div>
 			<h1 id="text">
