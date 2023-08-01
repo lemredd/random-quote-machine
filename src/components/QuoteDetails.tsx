@@ -12,7 +12,7 @@ export default function QuoteDetails({ author, text, is_fetching_quote }: Props)
 		else quote_details_container.current.style.opacity = "1"
 	}, [is_fetching_quote])
 	return (
-		<div>
+		<div ref={quote_details_container} style={{transition: "opacity 300ms ease"}}>
 			<h1 id="text">
 				<strong>"{text}"</strong>
 			</h1>
