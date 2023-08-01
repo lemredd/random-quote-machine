@@ -12,6 +12,7 @@ import './style.css';
 
 export default function App() {
 	const [quote, set_quote] = React.useState<Quote>(initial_quote);
+	const [is_fetching_quote, set_is_fetching_quote] = React.useState<boolean>(false);
 
 	const handle_click = async () => set_quote(await fetch_quote());
 
