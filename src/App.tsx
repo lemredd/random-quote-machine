@@ -23,7 +23,7 @@ export default function App() {
 
 	return (
 		<div id="quote-box" className="border border-dark-subtle rounded p-5">
-			<QuoteDetails {...quote} />
+			<QuoteDetails {...quote} is_fetching_quote={is_fetching_quote} />
 			<div className="buttons mt-5 d-flex justify-content-between align-items-center">
 				<TweetBtn {...quote} />
 				<NewQuoteBtn on_click={handle_click} />
